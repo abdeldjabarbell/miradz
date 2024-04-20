@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRA</title>
+    <link rel="stylesheet" href="mira.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Ajout de la bibliothèque Email.js -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header_">
+            <a href="#" class="logo"><img src="img/mira logoblack.png" alt="" id="logo_image"></a>      
+             <button class="custom-btn_ach acheter" id="acheter_btn1" style="width: 150px;">Acheter:0DA
+             </button>
+    </header>
+    <div class="backgroundProdect_page" id="backgroundProdect_page">
+        <div class="produit_detailes">
+            <div class="produitImage_bg">
+                <div class="images_bgr" id="images_bgr"></div>
+            </div>
+            <div class="produitDetailles_bg" id="produitDetailles_bg"></div>
+        </div>
+
+        <div class="stor_content_">
+            <div class="items_dispo">
+                <p></p>
+            </div>
+
+            <div class="commentaires_of_produit"></div>
+        </div>
+
+    </div>
+
+
+    <div class="formulaire_d_achat" id="formulaire_d_achat">
+        <div class="formulaire_d_achat_remplir">
+
+            <div class="content_formulaire_d_achat">
+                
+                <div class="la_facture_de_commend" id="la_facture_de_commend"> 
+                    <div class="titregenerage">
+                        <h1>FACTURE D'ACHAT</h1>
+                        <p>.mira</p>
+                    </div>
+                    <div class="imagesFacture">
+                        <div class="logofacture"><img src="img/mira logoblack.png" alt=""></div>
+                        <div class="produit_image_facture" id="produit_image_facture">
+                            <img id="srcimgProduit" src="" alt="">
+                        </div> 
+                    </div>
+                    <div class="info_produit_all">
+                        <div class="infoparticul">
+                            <h1 class="h1facture">Produit :</h1>
+                            <p class="h1facture" id="nomDeProduitFac">Nom du produit :</p>
+                        </div>
+                        <div class="infoparticul">
+                            <h1 class="h1facture" >Quantité :</h1>
+                            <p class="h1facture"id="QuantitéFac">1</p>
+                        </div>
+                        <div class="infoparticul" >
+                            <h1 class="h1facture" >Couleur :</h1>
+                            <div class="couleurFacteur" id="coleur_fa"></div>
+                        </div>
+                        <div class="infoparticul">
+                            <h1 class="h1facture" >Nom et Prénom :</h1>
+                            <p class="h1facture"id="nomeetprenom">Nom et Prénom de l'acheteur</p>
+                        </div>
+                        <div class="infoparticul">
+                            <h1 class="h1facture" >Téléphone :</h1>
+                            <p class="h1facture" id="phone_n">(+213)_0_00_00_00_00</p>
+                        </div>
+                        <div class="infoparticul">
+                            <h1 class="h1facture" >Adresse :</h1>
+                            <p class="h1facture" id="Adresse_">Adresse de livraison</p>
+                        </div>
+                        <div class="infoparticul">
+                            <h1 class="h1facture" >Date :</h1>
+                            <p class="h1facture" id="Date__">DATE</p>
+                        </div>
+                    </div>
+                    
+                    <div class="totaleprix">
+                        <h1 class="h1facture">TOTAL :</h1>
+                        <p class="h1facture" id="Total_facture">0 DA</p>
+                    </div>
+
+
+                </div>
+                <div class="_formulairela_facture_de_commend">
+                    <form action="">
+                        <div class="inpts_produit" style="width: 100%;">
+                            <label for="Quantite_de_produit_in">Quantité*</label>
+                            <div class="plusmoinscolor">
+                                <div class="plusbutton_fa" id="plusbutton_fa">+</div>
+                                <input type="number" id="Quantite_de_produit_in"  min="1" value="1">                            
+                                <div class="moinsbutton_fa" id="moinsbutton_fa">-</div>
+                            </div>
+                        </div>
+                        <div class="inpts_produit" style="width: 100%;">
+                            <label>Couleur*</label>
+                            <div class="select_your_color" id="select_your_color"> 
+                            </div>
+                        </div>
+                        <div class="inpts_produit" style="width: 100%;">
+                            <label for="Nom_prenome">Votre nom et prénom*</label>
+                            <input type="text" id="Nom_prenome" required>
+                        </div>
+                        <div class="inpts_produit" style="width: 100%;">
+                            <label for="numerotelephone">Numéro de téléphone*</label>
+                            <input type="number" id="numerotelephone" required>
+                        </div>
+                        <div class="inpts_produit" style="width: 100%;">
+                            <label for="adressPersonelle">Adresse personnelle*</label>
+                            <input type="text" id="adressPersonelle" required>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="Confirm_formulaire_d_achat">
+
+                <button class="custom-btn_ach acheter" id="affichefacture_"> CONFIRMER</button>
+                <button class="Anullerbtn_" id="anullerfacture_"> Anuller</button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="achat_wating" id="achat_wating" style="display: none;">
+        <div class="watingcontett">
+            <button class="xbtn" id="anulerEnvoyerLaFacture" style="display: none;">x</button>
+            <img src="img/mira logoblack.png" alt="">
+            <p id="messageenvoiyerfacture"></p>
+            <div id="envoyerLaFacture_div" style="display: none;">
+                <h1>Réception de la facture</h1>
+                <p>Veuillez insérer votre adresse e-mail pour recevoir la facture de votre achat.</p>
+                <div class="inpts_produit" style="width: 100%;">
+                    <label for="emailfacture">email*</label>
+                    <input type="email" id="emailfacture" required>
+                </div>
+                <div class="btnenvoyerFacture">
+                    <button class="custom-btn_ach acheter" id="envoyerLaFacture">Recevoir</button>    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="miraProduct.js"></script>
+</body>
+</html>
